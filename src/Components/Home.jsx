@@ -12,7 +12,7 @@ function Home() {
                     <h2>Let's Do it Together</h2>
                     <h3>Explore and Learn</h3>
                     <div className="home_btn">
-                        <button>Get Started with me</button>
+                        <button>Get Started</button>
                     </div>
                     <div className="home_animated"> <img src={animation}alt="" /></div>
                    

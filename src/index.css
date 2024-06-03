@@ -104,15 +104,22 @@ Link {
 @media(max-width: 900px) {
     .nav_list ul {
 
-        font-size: small;
+        font-size: 10px;
     }
 
     .nav_login {
-        width: 60px;
+        width:55px;
         margin-right: 50px;
         height: 65%;
 
     }
+    .nav_logo {
+        height: 30px;
+        font-size: 30px;
+        width: 35px;
+        margin-left: 2s0px;
+    }
+    
 
 }
 
@@ -165,8 +172,6 @@ Link {
     top: 150px;
     bottom: 100px;
     left: 40px;
-
-
 }
 
 @-webkit-keyframes up-down {
@@ -177,7 +182,7 @@ Link {
 
     100% {
 
-        transform: translateX(-12px);
+        transform: translateY(-12px);
     }
 }
 
@@ -190,7 +195,7 @@ Link {
 
     100% {
 
-        transform: translateX(-12px);
+        transform: translateY(-12px);
     }
 }
 
@@ -230,7 +235,13 @@ Link {
 
     .home_content button {
         height: 30px;
-        width: 150px;
+        width: 140px;
+    }
+    .home_animated {
+        position: absolute;
+        top: 450px;
+        bottom: 100px;
+        left: 90px;
     }
 }
 
