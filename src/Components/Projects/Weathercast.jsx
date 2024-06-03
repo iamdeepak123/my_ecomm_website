@@ -15,7 +15,7 @@ function Weathercast() {
 
         if (city === "") return alert("Enter the City first")
         try {
-            const data = await fetch("http://api.weatherapi.com/v1/current.json?key=41dd87c079c44f7b9b9172020243005&q=" + city + "&aqi=yes")
+            const data = await fetch("https://api.weatherapi.com/v1/current.json?key=41dd87c079c44f7b9b9172020243005&q=" + city + "&aqi=yes")
             var json = await data.json()
             setCount(json)
             console.log(json)
