@@ -1,25 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Home from './Components/Home';
+import Navbar from './Components/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Projects from './Components/Projects';
+import Login from './Components/Login';
+import Weathercast from './Components/Projects/Weathercast';
+import ToDoList from './Components/Projects/ToDoList';
+import DigitalClock from './Components/Projects/DigitalClock';
+import Counter from './Components/Projects/Counter';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return (<>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Navbar />}>
+
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Projects" element={<Projects />} />
+
+
+          <Route element={<Projects />}>
+
+            <Route path="/" element={<Home />} />
+            <Route path="/Projects/Counter" element={<Counter />} />
+
+           <Route path="/Projects/DigitalClock" element={<DigitalClock />} />
+           <Route path="/Projects/TodoList" element={<ToDoList />} />
+            <Route path="/Projects/Weathercast" element={<Weathercast />} />
+
+
+          </Route>
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+  </>
+  )
 }
 
 export default App;

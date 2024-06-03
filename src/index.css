@@ -1,13 +1,775 @@
+/* Navbar Styling Code for CSS */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+    margin: 0;
+    padding: 0;
+    font-family: Lora, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main_navbar_div {
+    position: fixed;
+    height: 65px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    justify-content: space-between;
+    caret-color: transparent;
+    background: rgba(0, 0, 0, .2);
+    overflow: hidden;
+
+}
+
+.nav_logo {
+    height: 50px;
+    font-size: 40px;
+    width: 50px;
+    margin-left: 30px;
+}
+
+.nav_list {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 40px;
+    justify-content: center;
+
+}
+
+.nav_list ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: larger;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.nav_list ul li {
+    letter-spacing: .6px;
+    width: 165px;
+    height: 40px;
+    align-content: center;
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    color: white;
+    opacity: 0.7;
+}
+
+Link {
+    text-decoration: none;
+}
+
+.nav_login {
+    width: 100px;
+    margin-right: 25px;
+    height: 100%;
+}
+
+.nav_login button {
+    border: 1px solid white;
+    height: 70%;
+    margin: 10px;
+    width: 90px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: larger;
+    background-color: rgb(148, 148, 249);
+    color: white;
+}
+
+.nav_login button:hover {
+    background-color: rgb(225, 222, 219);
+    color: black;
+    transition: .6s;
+}
+
+/* .li_project:hover {
+    border: 1px solid white;
+    transition: 0.7s;
+    background-color: #4d565d;
+    color: white;
+    border-radius: 5px;
+
+} */
+
+
+
+@media(max-width: 900px) {
+    .nav_list ul {
+
+        font-size: small;
+    }
+
+    .nav_login {
+        width: 60px;
+        margin-right: 50px;
+        height: 65%;
+
+    }
+
+}
+
+
+/*-----------------------------------------------------------Home Page Styling CSS Code-------------------------------------------- */
+
+.main_home_div {
+    height: auto;
+    width: 100%;
+
+}
+
+.home_content {
+    background-image: url(https://images.unsplash.com/photo-1519865885898-a54a6f2c7eea?q=80&w=1958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    height: 800px;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+}
+
+.home_content h2 {
+
+    text-align: center;
+    margin-top: 210px;
+    font-size: 40px;
+    color: #fff;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.home_content h3 {
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    font-weight: bolder;
+    letter-spacing: 1px;
+
+}
+
+.home_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.home_animated {
+    position: absolute;
+    top: 150px;
+    bottom: 100px;
+    left: 40px;
+
+
+}
+
+@-webkit-keyframes up-down {
+    0% {
+        transform: translateY(12px);
+
+    }
+
+    100% {
+
+        transform: translateX(-12px);
+    }
+}
+
+@keyframes up-down {
+
+    0% {
+        transform: translateY(12px);
+
+    }
+
+    100% {
+
+        transform: translateX(-12px);
+    }
+}
+
+.home_animated img {
+    height: 300px;
+    width: 300px;
+    mix-blend-mode: multiply;
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+.home_content button {
+    letter-spacing: 1px;
+    text-align: center;
+    height: 40px;
+    width: 180px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: larger
+}
+
+.home_content button:hover {
+
+    transition: .6s;
+    background-color: rgb(150, 150, 251);
+    color: white;
+}
+
+@media(max-width: 900px) {
+    .home_content h3 {
+
+        font-size: 45px;
+    }
+
+    .home_content h2 {
+        font-size: 25px;
+    }
+
+    .home_content button {
+        height: 30px;
+        width: 150px;
+    }
+}
+
+/*-------------------------------------------------------Home footer CSS styling code---------------------------------------------------*/
+
+.footer_div {
+    height: 250px;
+    color: white;
+    background-color: #4d565d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.footer_div input {
+
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    outline: none;
+    justify-content: center;
+
+}
+
+.footer_div button {
+    height: 55px;
+    width: 100px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: #b5b5b6;
+    border: none;
+
+
+}
+
+.footer_div button:hover {
+    transition: .7s;
+    background-color: orange;
+    outline: none;
+    border: none;
+
+}
+
+@media(max-width: 900px) {
+    .footer_div {
+        height: 160px;
+    }
+
+    .footer_div button {
+        height: 44px;
+        width: 80px;
+        font-size: 15px;
+    }
+
+    .footer_div input {
+
+        height: 40px;
+        width: 200px;
+
+    }
+}
+
+/*-------------------------------------------------------Login page CSS styling code---------------------------------------------------*/
+
+.login_main_div {
+    display: flex;
+    height: auto;
+    min-height: 800px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(45deg, rgb(62, 62, 149), rgb(219, 207, 106), rgb(194, 2, 159));
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.login_form {
+    height: 600px;
+    width: 440px;
+    border: 1px solid white;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.login_form:hover {
+    transform: scale(1.05);
+}
+
+.login_form label {
+    margin-left: 47px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    caret-color: transparent;
+    font-size: larger;
+}
+
+.login_form h1,
+h4 {
+
+    text-align: center;
+    margin-top: 50px;
+    caret-color: transparent;
+
+}
+
+.login_form h5 {
+    margin-top: 3px;
+    text-align: end;
+    margin-left: 248px;
+    font-weight: normal;
+    caret-color: transparent;
+    cursor: pointer;
+    width: 150px;
+}
+
+.login_form h5:hover {
+
+    text-decoration: underline;
+    color: blue;
+}
+
+.login_form input {
+    text-align: initial;
+    font-size: medium;
+    height: 40px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid whitesmoke;
+    outline: none;
+}
+
+.login_form button {
+    width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: large;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-image: linear-gradient(90deg, rgb(91, 85, 209), rgb(226, 220, 166), rgb(194, 2, 159));
+
+}
+
+.login_form button:hover {
+    color: #fff;
+    background-image: linear-gradient(60deg, rgb(91, 85, 209), rgb(226, 220, 166), rgb(194, 2, 159));
+    transition: .8s;
+}
+
+.l_icon {
+    display: flex;
+    gap: 10px;
+    font-size: larger;
+    justify-content: center;
+
+
+}
+
+.l_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+@media(max-width: 900px) {
+
+    .login_form input {
+
+        font-size: medium;
+        height: 40px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid whitesmoke;
+        outline: none;
+    }
+
+    .login_form button {
+        width: 200px;
+        height: 35px;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: medium;
+        letter-spacing: 1px;
+        cursor: pointer;
+        background-image: linear-gradient(90deg, rgb(91, 85, 209), rgb(226, 220, 166), rgb(194, 2, 159));
+
+    }
+
+    .login_form label {
+        margin-left: 70px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        caret-color: transparent;
+        font-size: medium;
+    }
+
+
+    .login_form h5 {
+        margin-top: 3px;
+        text-align: end;
+        margin-left: 222px;
+        font-weight: normal;
+        caret-color: transparent;
+        cursor: pointer;
+        width: 150px;
+    }
+}
+
+/* -------------------------------------------------Weathercast Styling CSS code---------------------------------------------- */
+
+.main_div {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(45deg, rgb(62, 62, 149), rgb(219, 207, 106), rgb(194, 2, 159));
+
+
+}
+
+
+
+.Wouterdivbox {
+    height: auto;
+    min-height: 380px;
+    width: 350px;
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background: transparent;
+
+}
+
+.Wouterdivbox:hover {
+    transform: scale(1.05);
+}
+
+.Wouterdivbox h2 {
+    text-align: center;
+    caret-color: transparent;
+
+}
+
+.Wsearch_bar {
+    width: auto;
+    height: 15%;
+    margin: 2px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.div_btn {
+    display: flex;
+}
+
+.Wsearch_bar button {
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 30px;
+    width: auto;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.Wsearch_bar input {
+    margin: 2px;
+    margin-left: 10px;
+    width: 80%;
+    text-align: center;
+    font-size: medium;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: transparent;
+    outline: none;
+    border-radius: 5px;
+
+}
+
+.Wsearch_bar button:hover {
+    background-color: #1565C0;
+}
+
+.Wmain_div {
+
+    height: 65%;
+    margin: 2px;
+}
+
+.Wmain_div h2 {
+
+    height: 36px;
+    margin-top: 5px;
+    caret-color: transparent;
+    text-align: center;
+    color: rgb(6, 63, 115);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Wmain_div h3 {
+    caret-color: transparent;
+    height: 36px;
+    margin-top: 5px;
+
+    text-align: center;
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Wmain_div h4 {
+    caret-color: transparent;
+    text-align: center;
+}
+
+/* -----------------------------------------------ToDoList styling CSS Code----------------------------------------------------- */
+
+.cal_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+
+
+}
+
+.input_area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.todo_btn {
+    height: 40px;
+    width: 50px;
+    color: white;
+    margin-left: 50px;
+    border-radius: 10%;
+    background-color: blue;
+    font-size: 32px;
+    text-align: center;
+    caret-color: transparent;
+}
+
+.todo_btn:hover {
+    color: white;
+    background-color: black;
+}
+
+.order_list {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 200px;
+    width: 90%;
+    margin-left: 10px;
+    caret-color: transparent;
+    list-style: none;
+    caret-color: transparent;
+}
+
+span i {
+    caret-color: transparent;
+    margin: 5px;
+    font-size: 25spx;
+    cursor: pointer;
+
+}
+
+.btn28 {
+    height: 40px;
+    width: 50px;
+    border-radius: 10%;
+    margin-top: -50px;
+    margin-left: 246px;
+}
+
+.input_value1 {
+
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 55%;
+    height: 35px;
+    text-align: center;
+    border: none;
+    font-size: medium;
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: none;
+
+}
+
+.outerdivbox {
+    height: 380px;
+    width: 350px;
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: -8px -2px 28px rgb(198, 187, 187);
+    transition: transform 0.3s ease-in-out;
+    align-content: center;
+
+}
+
+.outerdivbox:hover {
+    transform: scale(1.05);
+}
+
+/* ----------------------------------DigitalClock styling CSS code ---------------------------------------------*/
+
+.c_heading {
+    text-align: center;
+    padding: 5px;
+    align-content: center;
+
+
+}
+
+.divbox {
+
+    height: 100px;
+    width: 300px;
+    display: flex;
+    margin: 20px;
+    margin-top: 20px;
+    align-items: center;
+    border: 2px solid black;
+    justify-content: center;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+/* ----------------------------------Counter styling CSS code ---------------------------------------------*/
+
+
+.btn_reset {
+    text-align: center;
+    margin-left: 100px;
+    width: 150px;
+
+}
+
+/* button {
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: large;
+    cursor: pointer;
+    background-color: rgb(99, 156, 225);
+    font-weight: bold;
+    margin: 2px;
+    margin-top: 3px;
+  
+  }
+  
+  button:hover {
+    color: white;
+    background-color: black;
+  } */
+
+/* ----------------------------------Projects styling CSS code ---------------------------------------------*/
+
+.project_main_div {
+    background-image: linear-gradient(45deg, rgb(62, 62, 149), rgb(219, 207, 106), rgb(194, 2, 159));
+    height: auto;
+    min-height: 220px;
+    width: 100%;
+    overflow: hidden;
+
+
+
+}
+
+.project_main_div h4 {
+
+    margin-top: 100px;
+    padding: 5px;
+    font-size: large;
+    color: #fff;
+}
+
+.project_main_list {
+    height: auto;
+    min-height: 30px;
+    width: 100%;
+
+}
+
+.project_main_list ul {
+
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+}
+
+.project_main_list ul button {
+    height: 30px;
+    width: 120px;
+    font-size: large;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    background: transparent;
+}
+
+.project_main_list ul button:hover {
+
+    background-color: #2196F3;
+    transform: scale(1.05);
+
+
 }
