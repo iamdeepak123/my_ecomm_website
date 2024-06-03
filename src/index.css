@@ -105,6 +105,7 @@ Link {
     .nav_list ul {
 
         font-size: 10px;
+        margin-right: 50px;
     }
 
     .nav_login {
