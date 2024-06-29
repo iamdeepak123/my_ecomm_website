@@ -48,7 +48,7 @@ const CartReducer = (state, action) => {
 
 
       }
-      // console.log(product)
+      
       return {
         ...state,
         cart: [...state.cart, cartproduct],

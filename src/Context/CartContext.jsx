@@ -10,8 +10,8 @@ const CartContext = createContext();
 const CartProvider = ({ children }) => {
     const initialState = {
 
-        cart: [],
-        // cart: JSON.parse(localStorage.getItem("mycart")),
+        // cart: [],
+        cart: JSON.parse(localStorage.getItem("mycart")),
         total_quantity: '',
         total_price: "",
     
