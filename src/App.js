@@ -3,42 +3,38 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
+import AddToCart from './Components/AddToCart';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Projects from './Components/Projects';
+import Products from './Components/Products';
 import Login from './Components/Login';
-import Weathercast from './Components/Projects/Weathercast';
-import ToDoList from './Components/Projects/ToDoList';
-import DigitalClock from './Components/Projects/DigitalClock';
-import Counter from './Components/Projects/Counter';
+import Error from './Components/Error';
+import Footer from './Components/footer';
+import SingleProduct from './Components/SingleProduct';
 
 
 function App() {
   return (<>
+
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route element={<Navbar />}>
-
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Projects" element={<Projects />} />
 
 
-          <Route element={<Projects />}>
+        <Route path="/" element={<Home name={"Deepak"} />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/AddToCart" element={<AddToCart />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/SingleProduct/:id" element={<SingleProduct />} />
+        <Route path='*' element={<Error />}/>
 
-            <Route path="/" element={<Home />} />
-            <Route path="/Projects/Counter" element={<Counter />} />
+         
 
-           <Route path="/Projects/DigitalClock" element={<DigitalClock />} />
-           <Route path="/Projects/TodoList" element={<ToDoList />} />
-            <Route path="/Projects/Weathercast" element={<Weathercast />} />
-
-
-          </Route>
-
-        </Route>
+        
       </Routes>
+      <Footer/>
+      
     </BrowserRouter>
 
   </>

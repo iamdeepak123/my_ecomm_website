@@ -1,41 +1,37 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "../index.css";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { useContext, useState } from "react";
+import CartContext from "../Context/CartContext";
 
 function Navbar() {
-
+    const [value, setValue] = useState(false)
+const {total_quantity}= useContext(CartContext)
     return (
         <>
-
-
-
-
-            <div className="main_navbar_div">
+            <div className={value ? "main_navbar_div active" : "main_navbar_div"}>
                 <div className="nav_logo">
-                    <i className="fa-brands fa-studiovinari"></i>
+                    <i className="fa-brands fa-studiovinari"> </i>
                 </div>
-
                 <div className="nav_list">
                     <ul>
-                        <li><Link style={{ textDecoration: 'none' }} to="/">HOME</Link></li>
-                        <li className="li_project"><Link style={{ textDecoration: 'none' }} to="/Projects">PROJECTS</Link></li>
-                        <li><Link style={{ textDecoration: 'none' }} to="/About">ABOUT</Link></li>
-                        <li><Link style={{ textDecoration: 'none' }} to="/Contact">CONTACT</Link></li>
-
+                        <li><Link onClick={() => setValue(false)} style={{ textDecoration: 'none' }} to="/" >HOME</Link></li>
+                        <li><Link onClick={() => setValue(false)} style={{ textDecoration: 'none' }} to="/Products">PRODUCTS</Link></li>
+                        <li><Link onClick={() => setValue(false)} style={{ textDecoration: 'none' }} to="/About">ABOUT</Link></li>
+                        <li><Link onClick={() => setValue(false)} style={{ textDecoration: 'none' }} to="/Contact">CONTACT</Link></li>
+                        <li><Link onClick={() => setValue(false)} style={{ textDecoration: 'none' }} to="/AddToCart"><ShoppingCartIcon /> <span>{total_quantity}</span></Link></li>
+                        <li><Link onClick={() => setValue(false)} to="/Login"><button>Login</button></Link></li>
                     </ul>
                 </div>
-
-                <div className="nav_login">
-
-                    <Link to="/Login"><button>Login</button></Link>
-
+                <div className="user_name"> welcome Deepak</div>
+                <div className="menu_btn">
+                    < MenuIcon className="mobile_icon" onClick={() => setValue(true)} />
+                    < CloseIcon className="close_icon mobile_icon" onClick={() => setValue(false)} />
                 </div>
-
-
             </div>
-         
-            <Outlet />
         </>
-
     )
 }
 

@@ -1,7 +1,18 @@
+import HeroSection from "./HeroSection"
+
+
 function About(){
 
-    return 
-    
+    return (
+
+        
+   <>
+   <HeroSection name ={"About Karki Store"}/>
+   
+   </>
+
+    )
+
     
     }
     
