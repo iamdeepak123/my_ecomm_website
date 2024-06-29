@@ -6,14 +6,16 @@ const productContext = createContext();
 
 const API = "https://api.pujakaitem.com/api/products";
 
-const initialState = {
-    isError: false,
-    products: [],
-    featureProducts: [],
-    singleProduct: {}
-};
+
 
 const AppProvider = ({ children }) => {
+
+    const initialState = {
+        isError: false,
+        products: [],
+        featureProducts: [],
+        singleProduct: {}
+    };
 
     const [state, dispatch] = useReducer(reducer, initialState)
 

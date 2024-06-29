@@ -5,18 +5,17 @@ import reducer from "../Reducers/CartReducer"
 const CartContext = createContext();
 
 
-const initialState = {
-    // cart: [],
-    cart: JSON.parse(localStorage.getItem("mycart")),
-    total_quantity: '',
-    total_price: "",
-    
-
-
-}
 
 
 const CartProvider = ({ children }) => {
+    const initialState = {
+
+        // cart: [],
+        cart: JSON.parse(localStorage.getItem("mycart")),
+        total_quantity: '',
+        total_price: "",
+    
+    }
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
