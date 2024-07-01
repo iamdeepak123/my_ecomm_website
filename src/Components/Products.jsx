@@ -15,9 +15,6 @@ const Products = () => {
   const [filter, setFilter] = useState("")
   const [range, setRange] = useState("60000")
 
-
-  console.log(products);
-
   const sorting = () => {
 
     let userSortvalue = document.getElementById("sort");
