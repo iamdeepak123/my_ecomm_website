@@ -7,7 +7,10 @@ const CartContext = createContext();
 const getCartData = ()=>{
 
     let localCartData = localStorage.getItem("mycart")
+if (localCartData === null){
 
+    return [];
+}else
    return JSON.parse(localCartData);
 
 
@@ -19,7 +22,6 @@ const CartProvider = ({ children }) => {
     const initialState = {
 
         // cart: [],
-        // cart: JSON.parse(localStorage.getItem("mycart")),
         cart: getCartData(),
         total_quantity: '',
         total_price: "",
