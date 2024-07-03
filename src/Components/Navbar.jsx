@@ -5,10 +5,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useContext, useState } from "react";
 import CartContext from "../Context/CartContext";
+import LoginOutContext from "../Context/LogInOutContext";
 
 function Navbar() {
     const [value, setValue] = useState(false)
-const {total_quantity}= useContext(CartContext)
+    const { total_quantity } = useContext(CartContext);
+
+    const { name,image ,loggedin} = useContext(LoginOutContext);
+
+  
+
+
+
     return (
         <>
             <div className={value ? "main_navbar_div active" : "main_navbar_div"}>
@@ -25,7 +33,9 @@ const {total_quantity}= useContext(CartContext)
                         <li><Link onClick={() => setValue(false)} to="/Login"><button>Login</button></Link></li>
                     </ul>
                 </div>
-                <div className="user_name"> welcome Deepak</div>
+                {
+                    loggedin?<div className="user_name"> <p>{name}</p> <img src={image} alt="" /> </div>: <div></div>
+                }
                 <div className="menu_btn">
                     < MenuIcon className="mobile_icon" onClick={() => setValue(true)} />
                     < CloseIcon className="close_icon mobile_icon" onClick={() => setValue(false)} />

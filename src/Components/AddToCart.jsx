@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import CartContext from "../Context/CartContext";
 import { Link } from "react-router-dom"
+import LoginOutContext from "../Context/LogInOutContext";
 
 import CartList from './CartList';
 const AddToCart = () => {
 
   const { cart, clearCart, total_quantity, total_price } = useContext(CartContext)
-
+  const { name, image, loggedin } = useContext(LoginOutContext);
   if (cart.length === 0) {
     return (
 
@@ -28,9 +29,48 @@ const AddToCart = () => {
   return (
     <>
       <div className="main_cart_page">
-        <div className="heading">
-          <p>Your Cart List</p>
-        </div>
+
+        {loggedin ?
+          <div className="heading">
+
+            <div className='heading_col_one'>
+              <p>Your Cart List</p>
+            </div>
+
+            <div className='heading_col_two'>
+              <p>{name}</p>
+              <img src={image} alt="" />
+            </div>
+          </div>
+          :
+          <div className="heading">
+            <p>Your Cart List</p>
+          </div>
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div className="row_heading">
           <p>Item</p>
@@ -79,7 +119,7 @@ const AddToCart = () => {
               <p><b>Order Total:</b></p>
               <p>  &#8377;{total_price + 2000}/-</p>
             </div>
-            
+
           </div>
 
         </div>

@@ -52,11 +52,21 @@ body {
 
 .user_name {
     margin-right: 10px;
-    height: auto;
-    width: auto;
-    display: inline-block;
+    height: 100%;
+    width: 15%;
+   gap: 3%;
+    display: flex;
+    align-items: center;
 }
 
+.user_name p{
+    width: 80%;
+}
+.user_name img{
+    width: 40%;
+    height: 90%;
+    border-radius: 50%;
+}
 .nav_list ul li {
     letter-spacing: .6px;
     width: 125px;
@@ -811,14 +821,46 @@ button {
 }
 
 .heading {
-    height: 30px;
+    height: 55px;
     margin-top: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 70%;
     font-size: larger;
     font-weight: bold;
     caret-color: transparent;
+}
+
+.heading_col_one {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+   
+}
+
+.heading_col_two {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+   
+
+}
+
+.heading_col_two p {
+    width: 60%;
+    align-content: center;
+    height: 100%;
+  
+}
+
+.heading_col_two img {
+    width: 35%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .row_heading {
@@ -1079,6 +1121,8 @@ button {
     .clear_cart_btn {
         margin-left: 10%;
     }
+
+    
 }
 
 @media(max-width:600px) {
@@ -1092,6 +1136,33 @@ button {
         width: 90%;
         font-size: small;
         margin: 10px;
+    }
+    .heading {
+        gap: 20%;
+    }
+
+    .heading_col_one {
+        font-size: small;
+
+        width: 50%;
+        height: 100%;
+
+    }
+
+    .heading_col_two {
+        font-size: small;
+        width: 70%;
+
+    }
+
+    .heading_col_two p {
+        width: 95%;
+        padding-left: 5px;
+    }
+
+    .heading_col_two img {
+        width: 60%;
+        height: 80%;
     }
 }
 
@@ -1526,7 +1597,7 @@ h2 {
 }
 
 .login_form {
-    height: 600px;
+    height: 550px;
     width: 440px;
     border: 1px solid white;
     background-color: #fff;
@@ -1537,13 +1608,14 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.login_form label {
-    margin-left: 47px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    caret-color: transparent;
-    font-size: larger;
+.login_form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
+
 
 .login_form h1,
 h4 {
@@ -1553,9 +1625,9 @@ h4 {
 }
 
 .login_form h5 {
-    margin-top: 3px;
+    margin-top: -10px;
     text-align: end;
-    margin-left: 248px;
+    margin-left: 150px;
     font-weight: normal;
     caret-color: transparent;
     cursor: pointer;
@@ -1568,38 +1640,48 @@ h4 {
 }
 
 .login_form input {
-    text-align: initial;
     font-size: medium;
     height: 40px;
-    width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid whitesmoke;
+    width: 300px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(237, 225, 225);
     outline: none;
+    padding-left: 10px;
+    border-radius: 5px;
 }
 
 .login_form button {
-    width: 210px;
+    width: 150px;
     height: 40px;
     margin-top: 10px;
     border-radius: 5px;
     font-size: large;
     letter-spacing: 1px;
+    color: white;
+    font-weight: bolder;
     cursor: pointer;
     background-color: blue;
     border: none;
 }
 
 .login_form button:hover {
-    color: #fff;
+    color: black;
     transition: .8s;
 }
 
 .l_icon {
+    caret-color: transparent;
+    height: 100px;
+    width: 100%;
     display: flex;
-    gap: 10px;
-    font-size: larger;
     justify-content: center;
+}
+
+.l_icon img {
+    height: 45%;
+    width: 50%;
+    cursor: pointer;
+    border: none;
 }
 
 .l_btn {
@@ -1629,7 +1711,7 @@ h4 {
 @media(max-width: 1020px) {
 
     .login_form input {
-        width: 300px;
+        width: 250px;
     }
 
     .login_form button {
@@ -1638,10 +1720,6 @@ h4 {
         font-size: medium;
     }
 
-    .login_form label {
-        margin-left: 70px;
-        font-size: medium;
-    }
 
     .login_form h5 {
         margin-left: 222px;
@@ -1652,7 +1730,7 @@ h4 {
 
     .login_form {
         width: 260px;
-        height: 500px;
+        height: 450px;
         font-size: small;
     }
 
@@ -1669,7 +1747,7 @@ h4 {
     }
 
     .login_form h5 {
-        margin-left: 100px;
+        margin-left: 55px;
     }
 
     .login_form label {
@@ -1677,14 +1755,15 @@ h4 {
     }
 
     .login_form button {
-        width: 100px;
-        margin-top: 7px;
+        width: 90px;
+        height: 26px;
+        margin-top: 0px;
     }
 
     .login_form input {
         font-size: small;
         height: 30px;
-        width: 230px;
+        width: 200px;
         margin-left: 5px;
     }
 
@@ -1698,5 +1777,11 @@ h4 {
     .login_form h1,
     h4 {
         margin-top: 30px;
+    }
+
+    .l_icon img {
+        height: 30%;
+        width: 70%;
+
     }
 }
