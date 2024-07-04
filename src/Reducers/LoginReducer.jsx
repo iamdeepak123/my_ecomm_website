@@ -6,21 +6,27 @@ const LoginReducer = (state, action) => {
 
         // const {displayName, photoURL} = action.payload;
 
-        return{
-            ...state,
+        let details = {
             name:action.payload.displayName,
             image:action.payload.photoURL,
             loggedin: true,
         }
-    }
-
-    if(action.type ==="LOG_OUT"){
 
         return{
             ...state,
-            name: "",
+            Userdata: details,
+        }
+    }
+
+    if(action.type ==="LOG_OUT"){
+        let details = {
+            name:"",
+            image:"",
             loggedin: false,
-            image: "",
+        }
+        return{
+            ...state,
+           Userdata: details,
         }
     }
 

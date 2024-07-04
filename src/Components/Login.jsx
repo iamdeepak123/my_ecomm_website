@@ -14,7 +14,7 @@ function Login() {
         password: "",
 
     })
-    const { googlesignup, loggedin, LoggedOut} = useContext(LoginOutContext);
+    const { googlesignup, LoggedOut,Userdata} = useContext(LoginOutContext);
 
     const updatedata = (e) => {
         let name = e.target.name;
@@ -48,7 +48,7 @@ function Login() {
     return (
         <>
             <div className="login_main_div">
-                {loggedin ?
+                {Userdata.loggedin ?
                     <div className="login_main_page">
                         <h2>You have sucessfully logged in <button onClick={LoggedOut}>Logout</button></h2>
                         <h2>Go to Home Page <Link to="/"><button>Home</button></Link></h2>

@@ -7,7 +7,7 @@ import CartList from './CartList';
 const AddToCart = () => {
 
   const { cart, clearCart, total_quantity, total_price } = useContext(CartContext)
-  const { name, image, loggedin } = useContext(LoginOutContext);
+  const { Userdata } = useContext(LoginOutContext);
   if (cart.length === 0) {
     return (
 
@@ -30,7 +30,7 @@ const AddToCart = () => {
     <>
       <div className="main_cart_page">
 
-        {loggedin ?
+        {Userdata.loggedin ?
           <div className="heading">
 
             <div className='heading_col_one'>
@@ -38,8 +38,8 @@ const AddToCart = () => {
             </div>
 
             <div className='heading_col_two'>
-              <p>{name}</p>
-              <img src={image} alt="" />
+              <p>{Userdata.name}</p>
+              <img src={Userdata.image} alt="" />
             </div>
           </div>
           :

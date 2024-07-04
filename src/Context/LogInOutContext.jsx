@@ -1,57 +1,29 @@
 import { createContext, useEffect, useReducer } from "react";
 import reducer from "../Reducers/LoginReducer"
-import { auth, provider } from "../Firebase/firebase";
+import { auth, provider, db } from "../Firebase/firebase";
 import { signInWithPopup } from 'firebase/auth';
-
 
 const LoginOutContext = createContext();
 
 const LoginProvider = ({ children }) => {
 
-    // let response = JSON.parse(localStorage.getItem("userrr"));
 
-    // const initialState = {
-    //     name: "",
-    //     loggedin: false,
-    //     image: "",
-    // }
+    const getUserData = () => {
+        let response = localStorage.getItem("userrr");
+        if (response === null) {
+
+            return [];
+        }else
+        return JSON.parse(response);
 
 
-
-    const uName = () => {
-        let response = JSON.parse(localStorage.getItem("userrr"));
-        if (response === "null") {
-            return "";
-
-        } else
-            return response.name;
     }
 
-    const loggin = () => {
-        let response = JSON.parse(localStorage.getItem("userrr"));
 
-        if (response === "null") {
-            return "";
-
-        } else
-            return response.loggedin;
-    }
-
-    const imagefun = () => {
-        let response = JSON.parse(localStorage.getItem("userrr"));
-        if (response === "null") {
-            return "";
-
-        } else
-            return response.image;
-    }
     const initialState = {
-        name: uName(),
-        loggedin: loggin(),
-        image: imagefun(),
+        //    Userdata: [],
+        Userdata: getUserData(),
     }
-
-
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -66,8 +38,23 @@ const LoginProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        localStorage.setItem("userrr", JSON.stringify(state));
+        localStorage.setItem("userrr", JSON.stringify(state.Userdata));
     }, [state])
+
+
+    // const updateData = async () => {
+    //     try {
+    //         const docRef = await addDoc(collection(db, "users"), {
+    //             name: state.name,
+    //             loggedin: state.loggedin,
+    //             image: state.image
+    //         });
+    //         console.log("Document written with ID: ", docRef.id);
+    //     } catch (e) {
+    //         console.error("Error adding document: ", e);
+    //     }
+
+    // }
 
 
     const LoggedOut = () => {
