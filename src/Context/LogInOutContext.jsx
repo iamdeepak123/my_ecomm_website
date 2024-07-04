@@ -36,7 +36,7 @@ const LoginProvider = ({ children }) => {
             return response.image;
     }
     const initialState = {
-        name: uName(),
+        name: "",
         loggedin: loggin(),
         image: imagefun(),
     }
