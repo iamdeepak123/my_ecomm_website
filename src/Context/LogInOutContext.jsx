@@ -13,37 +13,11 @@ const LoginProvider = ({ children }) => {
         if (response === null) {
 
             return [];
-        }else
-        return JSON.parse(response);
-
-
-    }
-
-    const loggin = () => {
-        let response = JSON.parse(localStorage.getItem("userrr"));
-
-        if (response === "null") {
-            return "";
-
         } else
-            return response.loggedin;
+            return JSON.parse(response);
+
+
     }
-
-    const imagefun = () => {
-        let response = JSON.parse(localStorage.getItem("userrr"));
-        if (response === "null") {
-            return "";
-
-        } else
-            return response.image;
-    }
-    const initialState = {
-        name: "",
-        loggedin: loggin(),
-        image: imagefun(),
-    }
-
-
 
     const initialState = {
         //    Userdata: [],
