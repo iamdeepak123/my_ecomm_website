@@ -11,9 +11,9 @@ function Navbar() {
     const [value, setValue] = useState(false)
     const { total_quantity } = useContext(CartContext);
 
-    const { name,image ,loggedin} = useContext(LoginOutContext);
+    const { name, image, loggedin, LoggedOut } = useContext(LoginOutContext);
 
-  
+
 
 
 
@@ -30,11 +30,18 @@ function Navbar() {
                         <li><Link onClick={() => setValue(false)} style={{ textDecoration: 'none' }} to="/About">ABOUT</Link></li>
                         <li><Link onClick={() => setValue(false)} style={{ textDecoration: 'none' }} to="/Contact">CONTACT</Link></li>
                         <li><Link onClick={() => setValue(false)} style={{ textDecoration: 'none' }} to="/AddToCart"><ShoppingCartIcon /> <span>{total_quantity}</span></Link></li>
-                        <li><Link onClick={() => setValue(false)} to="/Login"><button>Login</button></Link></li>
+                        <li>
+                            {loggedin ?
+
+                                <Link onClick={LoggedOut} to="/"><button>Logout</button></Link>
+                            :
+                            <Link onClick={() => setValue(false)} to="/Login"><button>Login</button></Link>
+                            }
+                        </li>
                     </ul>
                 </div>
                 {
-                    loggedin?<div className="user_name"> <p>{name}</p> <img src={image} alt="" /> </div>: <div></div>
+                    loggedin ? <div className="user_name"> <p>{name}</p> <img src={image} alt="" /> </div> : <div></div>
                 }
                 <div className="menu_btn">
                     < MenuIcon className="mobile_icon" onClick={() => setValue(true)} />

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Googleimage from "../images/loginwithGoogle.png";
 import LoginOutContext from '../Context/LogInOutContext';
@@ -27,7 +27,6 @@ function Login() {
     const logInButton = (e) => {
         e.preventDefault();
         if (name && email && password) {
-            localStorage.setItem("login", JSON.stringify(userdetails))
 
             setUserdetails({
                 name: "",
@@ -41,6 +40,10 @@ function Login() {
     function forgetpass() {
         alert("Your passwpord is 1234")
     }
+
+   
+
+  
 
     return (
         <>
