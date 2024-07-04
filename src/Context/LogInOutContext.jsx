@@ -19,6 +19,31 @@ const LoginProvider = ({ children }) => {
 
     }
 
+    const loggin = () => {
+        let response = JSON.parse(localStorage.getItem("userrr"));
+
+        if (response === "null") {
+            return "";
+
+        } else
+            return response.loggedin;
+    }
+
+    const imagefun = () => {
+        let response = JSON.parse(localStorage.getItem("userrr"));
+        if (response === "null") {
+            return "";
+
+        } else
+            return response.image;
+    }
+    const initialState = {
+        name: "",
+        loggedin: loggin(),
+        image: imagefun(),
+    }
+
+
 
     const initialState = {
         //    Userdata: [],
