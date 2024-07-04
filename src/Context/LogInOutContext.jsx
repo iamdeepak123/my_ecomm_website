@@ -7,13 +7,30 @@ import { signInWithPopup } from 'firebase/auth';
 const LoginOutContext = createContext();
 
 const LoginProvider = ({ children }) => {
-let response = JSON.parse(localStorage.getItem("userrr"));
-
-    const initialState = {
-        name: response.name,
-        loggedin: response.loggedin,
-        image: response.image,
+    const name = () => {
+        let response = JSON.parse(localStorage.getItem("userrr"));
+        let Name = response.name;
+        return Name
     }
+
+    const loggin = () => {
+        let response = JSON.parse(localStorage.getItem("userrr"));
+        let active =response.loggedin;
+        return active
+    }
+
+    const imagefun = () => {
+        let response = JSON.parse(localStorage.getItem("userrr"));
+    
+        let img = response.image;
+        return img
+    }
+    const initialState = {
+        name: name(),
+        loggedin: loggin(),
+        image: imagefun(),
+    }
+
 
 
     const [state, dispatch] = useReducer(reducer, initialState);
