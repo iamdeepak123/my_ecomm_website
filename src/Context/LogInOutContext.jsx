@@ -8,11 +8,38 @@ const LoginOutContext = createContext();
 
 const LoginProvider = ({ children }) => {
   
-     const initialState = {
-            name: "",
-            loggedin: false,
-            image: "",
-        }
+    const uName = () => {
+        let response = JSON.parse(localStorage.getItem("userrr"));
+        if (response === "null") {
+            return "";
+
+        } else
+            return response.name;
+    }
+
+    const loggin = () => {
+        let response = JSON.parse(localStorage.getItem("userrr"));
+
+        if (response === "null") {
+            return "";
+
+        } else
+            return response.loggedin;
+    }
+
+    const imagefun = () => {
+        let response = JSON.parse(localStorage.getItem("userrr"));
+        if (response === "null") {
+            return "";
+
+        } else
+            return response.image;
+    }
+    const initialState = {
+        name: uName(),
+        loggedin: loggin(),
+        image: imagefun(),
+    }
 
 
 
