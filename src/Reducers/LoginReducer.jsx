@@ -4,8 +4,6 @@ const LoginReducer = (state, action) => {
 
     if(action.type === "LOG_IN"){
 
-        // const {displayName, photoURL} = action.payload;
-
         let details = {
             name:action.payload.displayName,
             image:action.payload.photoURL,
