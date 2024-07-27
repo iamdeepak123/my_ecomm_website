@@ -26,8 +26,9 @@ function Footer() {
 
                     <input type="email" placeholder="Enter Your Email.." onChange={(event) => setEmail(event.target.value)} value={email} />
                     <button onClick={Submit}>Submit</button>
-                </div>
+                    
 
+                </div>
             </footer>
         </>
     )
