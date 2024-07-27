@@ -417,7 +417,7 @@ body {
 }
 
 .location_map {
-    width: 95%;
+    width: 75%;
 }
 
 .Contact_form {
@@ -455,11 +455,12 @@ body {
     width: 350px;
     margin-bottom: 10px;
     outline: none;
+    resize: none;
 }
 
 .Contact_form button {
     height: 45px;
-    width: 120px;
+    width: 350px;
     background-color: blue;
     color: white;
     text-align: center;
@@ -472,7 +473,7 @@ body {
 }
 
 .Contact_form button:hover {
-
+    opacity: 1;
     color: black;
     background-color: rgb(56, 56, 243);
     font-weight: bold;
