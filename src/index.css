@@ -1064,9 +1064,35 @@ button {
     margin-right: 10px;
 }
 
+.checkoutbtn{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.checkoutbtn button{
+    height: 100%;
+    width: 150px;
+    text-align: center;
+    font-size: 15px;
+    background-color: green;
+    color: white;
+    caret-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-right: 60px;
+}
+
+
 @media(max-width: 800px) {
     .row_cartlist {
         font-size: small;
+    }
+    .checkoutbtn button{
+        margin-right: 10px;
     }
 
     .p_name {

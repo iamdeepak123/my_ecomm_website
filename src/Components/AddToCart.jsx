@@ -10,8 +10,6 @@ const AddToCart = () => {
   const { Userdata } = useContext(LoginOutContext);
   if (cart.length === 0) {
     return (
-
-
       <div className="main_cart_page">
 
         <div className="heading_blank">
@@ -47,30 +45,6 @@ const AddToCart = () => {
             <p>Your Cart List</p>
           </div>
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <div className="row_heading">
           <p>Item</p>
@@ -123,6 +97,11 @@ const AddToCart = () => {
           </div>
 
         </div>
+
+        <div className="checkoutbtn">
+          <button>Check Out</button>
+        </div>
+
       </div>
 
 
